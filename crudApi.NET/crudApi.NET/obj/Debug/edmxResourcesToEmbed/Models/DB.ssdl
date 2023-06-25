@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="author">
+    <Key>
+      <PropertyRef Name="id_author" />
+    </Key>
+    <Property Name="id_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_author" Type="varchar" MaxLength="50" />
+    <Property Name="date_author" Type="date" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_author" Type="int" />
+    <Property Name="id_publisher" Type="int" />
+    <Property Name="title_book" Type="varchar" MaxLength="225" />
+    <Property Name="genre_book" Type="varchar" MaxLength="225" />
+    <Property Name="price_book" Type="float" />
+  </EntityType>
+  <EntityType Name="publisher">
+    <Key>
+      <PropertyRef Name="id_publisher" />
+    </Key>
+    <Property Name="id_publisher" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_publisher" Type="varchar" MaxLength="150" />
+    <Property Name="city_publisher" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="fk_bookAuthor">
+    <End Role="author" Type="Self.author" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="author">
+        <PropertyRef Name="id_author" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="id_author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bookPublisher">
+    <End Role="publisher" Type="Self.publisher" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="publisher">
+        <PropertyRef Name="id_publisher" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="id_publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="libraryModelStoreContainer">
+    <EntitySet Name="author" EntityType="Self.author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="publisher" EntityType="Self.publisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_bookAuthor" Association="Self.fk_bookAuthor">
+      <End Role="author" EntitySet="author" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bookPublisher" Association="Self.fk_bookPublisher">
+      <End Role="publisher" EntitySet="publisher" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
