@@ -1,0 +1,15 @@
+C:\GitHub\csharp\appTest\bin\Debug\net7.0\appTest.exe
+C:\GitHub\csharp\appTest\bin\Debug\net7.0\appTest.deps.json
+C:\GitHub\csharp\appTest\bin\Debug\net7.0\appTest.runtimeconfig.json
+C:\GitHub\csharp\appTest\bin\Debug\net7.0\appTest.dll
+C:\GitHub\csharp\appTest\bin\Debug\net7.0\appTest.pdb
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.csproj.AssemblyReference.cache
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.AssemblyInfoInputs.cache
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.AssemblyInfo.cs
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.csproj.CoreCompileInputs.cache
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.dll
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\refint\appTest.dll
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.pdb
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\appTest.genruntimeconfig.cache
+C:\GitHub\csharp\appTest\obj\Debug\net7.0\ref\appTest.dll

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_author" Type="varchar" MaxLength="50" />
+    <Property Name="name_publisher" Type="varchar" MaxLength="50" />
+    <Property Name="title_book" Type="varchar" MaxLength="225" />
+    <Property Name="genre_book" Type="varchar" MaxLength="225" />
+    <Property Name="price_book" Type="float" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
