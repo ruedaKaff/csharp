@@ -1,0 +1,40 @@
+﻿@model WebApplication1.Models.viewModels.bookViewModel
+@{
+    ViewBag.Title = "Agregar nuevo libro";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("newBook", "book", FormMethod.Post))
+{
+    <div class="row">
+
+        <div class="col-md-12">
+
+            @Html.LabelFor(d => d.name_author)
+            @Html.TextBoxFor(d => d.name_author, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.name_publisher)
+            @Html.TextBoxFor(d => d.name_publisher, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.title_book)
+            @Html.TextBoxFor(d => d.title_book, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.genre_book)
+            @Html.TextBoxFor(d => d.genre_book, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.price_book)
+            @Html.TextBoxFor(d => d.price_book, "", new { @class = "form-control" })
+            <br>
+            @Html.LabelFor(d => d.creationDate)
+            @Html.EditorFor(d => d.creationDate, "", new { @class = "form-control" })
+        </div>
+       <br />
+        <div style="text-align:right">
+            <input value="save" class="btn btn-primary" type="submit" />
+        </div>
+    </div>
+
+
+
+}

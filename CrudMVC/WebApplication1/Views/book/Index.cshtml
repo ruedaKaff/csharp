@@ -1,0 +1,56 @@
+﻿@model List<WebApplication1.Models.viewModels.listBookViewModel>
+@{
+    ViewBag.Title = "Book Store";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+
+
+
+
+
+<div class="row">
+
+    <div class="col-md-8 bg-primary ">
+
+        <h2 class="text-light p-3">@ViewBag.Title</h2>
+
+    </div>
+
+    <div class="col-md-4 bg-primary  text-end pt-3">
+
+        <a  href="~/book/newBook" class="btn" onclick="" style="background-color: green; color: white;">+ Add new book</a>
+
+    </div>
+
+    <div class="col-md-12 p-3 ">
+
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Genre</th>
+                <th>price</th>
+                <th class="text-end">Actions</th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.id_book. </td>
+                    <td>@oElemento.title_book</td>
+                    <td>@oElemento.name_author</td>
+                    <td>@oElemento.name_publisher</td>
+                    <td>@oElemento.genre_book</td>
+                    <td>@oElemento.price_book</td>
+                    <td class="text-end">
+                        <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>
