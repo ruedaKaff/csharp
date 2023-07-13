@@ -12,25 +12,26 @@ namespace WebApplication1.Models.viewModels
     {
             
         public int id_book { get; set; }
-
-        [Display(Name = "Autor del libro")]
+        [Required]
+        [Display(Name = "Autor del libro: ")]
         public string name_author { get; set; }
-
-        [Display(Name = "Nombre de el publicador")]
+        [Required]
+        [Display(Name = "Nombre de el publicador: ")]
         public string name_publisher { get; set; }
 
         [Required]
-        [Display(Name = "Nombre del libro")]
+        [Display(Name = "Nombre del libro: ")]
         public string title_book { get; set; }
-
-        [Display(Name = "Genero del libro")]
+        [Required]
+        [Display(Name = "Genero del libro: ")]
         public string genre_book { get; set; }
 
         [Required]
-        [Display(Name = "Precio en dolares")]
+        [Display(Name = "Precio en dolares: ")]
         public float price_book { get; set; }
+
         [DataType(DataType.Date)]
-        [Display(Name = "Fecha de prueba")]
+        [Display(Name = "Fecha de prueba: ")]
         public DateTime creationDate { get; set; }
 
 

@@ -17,16 +17,16 @@ namespace crudApi_L2._0.Controllers
         private Entities1 db = new Entities1();
 
         // GET: api/books
-        public IQueryable<book> Getbook()
+        public IQueryable<Book> Getbook()
         {
             return db.book;
         }
 
         // GET: api/books/5
-        [ResponseType(typeof(book))]
+        [ResponseType(typeof(Book))]
         public IHttpActionResult Getbook(int id)
         {
-            book book = db.book.Find(id);
+            Book book = db.book.Find(id);
             if (book == null)
             {
                 return NotFound();
@@ -37,7 +37,7 @@ namespace crudApi_L2._0.Controllers
 
         // PUT: api/books/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult Putbook(int id, book book)
+        public IHttpActionResult Putbook(int id, Book book)
         {
             if (!ModelState.IsValid)
             {
@@ -71,8 +71,8 @@ namespace crudApi_L2._0.Controllers
         }
 
         // POST: api/books
-        [ResponseType(typeof(book))]
-        public IHttpActionResult Postbook(book book)
+        [ResponseType(typeof(Book))]
+        public IHttpActionResult Postbook(Book book)
         {
             if (!ModelState.IsValid)
             {
@@ -86,10 +86,10 @@ namespace crudApi_L2._0.Controllers
         }
 
         // DELETE: api/books/5
-        [ResponseType(typeof(book))]
+        [ResponseType(typeof(Book))]
         public IHttpActionResult Deletebook(int id)
         {
-            book book = db.book.Find(id);
+            Book book = db.book.Find(id);
             if (book == null)
             {
                 return NotFound();

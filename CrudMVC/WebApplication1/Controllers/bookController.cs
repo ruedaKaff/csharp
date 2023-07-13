@@ -58,14 +58,74 @@ namespace WebApplication1.Controllers
                         db.book.Add(oBook);
                         db.SaveChanges();
                     }
+                    return Redirect("~/book/index");
                 }
-               return Redirect("book/index");
+                return View(model);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
+        public ActionResult editar( int id)
+        {
+            bookViewModel model = new bookViewModel();
+            using(Entities db = new Entities()) 
+            {
+                var oBook = db.book.Find(id);
+                model.name_author = oBook.name_author;
+                model.name_publisher = oBook.name_publisher;
+                model.title_book = oBook.title_book;
+                model.genre_book = oBook.genre_book;
+                model.price_book = model.price_book;
+                model.id_book = oBook.id_book;
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult editar(bookViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    using (Entities db = new Entities())
+                    {
+                        var oBook = db.book.Find(model.id_book);
+                        oBook.name_author = model.name_author;
+                        oBook.name_publisher = model.name_publisher;
+                        oBook.title_book = model.title_book;
+                        oBook.genre_book = model.genre_book;
+                        oBook.price_book = model.price_book;
+
+                        db.Entry(oBook).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    return Redirect("~/book/index");
+                }
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet]
+        public ActionResult eliminar(int id)
+        {
+            using (Entities db = new Entities())
+            {
+                
+                var oBook = db.book.Find(id);
+                db.book.Remove(oBook);
+                db.SaveChanges();
+       
+            }
+            return Redirect("~/book/index");
+        }
+
 
 
     }

@@ -1,15 +1,16 @@
 ﻿@model WebApplication1.Models.viewModels.bookViewModel
 @{
-    ViewBag.Title = "Agregar nuevo libro";
+    ViewBag.Title = "Editar libro";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("newBook", "book", FormMethod.Post))
+@using (Html.BeginForm("editar", "book", FormMethod.Post))
 {
     <div class="row">
 
         <div class="col-md-12">
+            @Html.HiddenFor(d=> d.id_book)
             <div>
                 @Html.LabelFor(d => d.name_author)
                 @Html.TextBoxFor(d => d.name_author, "", new { @class = "form-control" })
@@ -46,7 +47,7 @@
             @Html.LabelFor(d => d.creationDate)
             @Html.EditorFor(d => d.creationDate, "", new { @class = "form-control" })
         </div>
-       <br />
+        <br />
         <div style="text-align:right">
             <input value="save" class="btn btn-primary" type="submit" />
         </div>

@@ -8,7 +8,7 @@
 
 
 
-<div class="row">
+<div class="row  pt-4">
 
     <div class="col-md-8 bg-primary ">
 
@@ -44,8 +44,8 @@
                     <td>@oElemento.genre_book</td>
                     <td>@oElemento.price_book</td>
                     <td class="text-end">
-                        <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                        <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                        <a href="~/book/editar/@oElemento.id_book" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
+                        <a href="~/book/eliminar/@oElemento.id_book" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                     </td>
                 </tr>
             }

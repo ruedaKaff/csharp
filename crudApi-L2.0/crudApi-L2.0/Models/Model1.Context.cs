@@ -25,6 +25,6 @@ namespace crudApi_L2._0.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<book> book { get; set; }
+        public virtual DbSet<Book> book { get; set; }
     }
 }
